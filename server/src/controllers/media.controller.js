@@ -27,3 +27,11 @@ const getGenres = async (req, res) => {
         resHandler.error(res);
     }
 };
+
+const search = async (req, res) => {
+    try {
+        
+    } catch {
+        resHandler.error(res);
+    }
+};
