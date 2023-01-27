@@ -1,5 +1,5 @@
-import resHandler from "../handlers/res.handler";
-import favModel from "../models/fav.model";
+import resHandler from "../handlers/res.handler.js";
+import favModel from "../models/fav.model.js";
 
 const addFav = async (req, res) => {
     try {
