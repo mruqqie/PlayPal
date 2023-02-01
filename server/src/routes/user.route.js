@@ -65,8 +65,8 @@ router.put(
     body("newPassword")
         .exists().withMessage("New password is required")
         .isLength({ min: 6 }).withMessage("Username minimum: 6 characters"),
-    body("confirmPassword")
-        .exists().withMessage("Confirm Password is required")
+    body("confirmNewPassword")
+        .exists().withMessage("Confirm new password is required")
         .isLength({ min: 3 }).withMessage("Username minimum: 3 characters")
         .custom((value, { req }) => {
             if (value !== req.body.password) {
@@ -107,6 +107,7 @@ router.post(
         .exists().withMessage("Media poster is required"),
     body("mediaRate")
         .exists().withMessage("Media rate is required"),
+    reqHandler.validate,
     favController.addFav
 );
 
