@@ -16,7 +16,7 @@ router.post(
         .custom(async (value) => {
             const user = await userModel.findOne({ username: value });
             if (user) {
-                Promise.reject("Username already in use");
+                return Promise.reject("Username already in use");
             }
         }),
     body("password")
